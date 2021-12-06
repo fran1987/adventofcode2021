@@ -39,7 +39,7 @@ function second(){
 second();
 
 function parseBoards(){
-    let input = getInput();
+    let input = getInput(4);
     let boards = [];
     let drawnNumbers = input[0].split(',').map(x=>parseInt(x));
     let board= [];

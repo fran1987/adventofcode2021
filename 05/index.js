@@ -1,7 +1,7 @@
 import { getInput } from '../helpers.js';
 
 function first(noDiagonals){
-    const input = getInput();
+    const input = getInput(5);
     let segments = [];
     for (const line of input) {
         let matches = line.match(/(\d+),(\d+) -> (\d+),(\d+)/);

@@ -1,7 +1,7 @@
 import { getInput } from '../helpers.js';
 
 function first(){
-    let input = getInput();
+    let input = getInput(3);
     let freqs = new Array(input[0].length);
     freqs.fill(0);
     for(let i = 0; i < input.length; i++){
@@ -24,7 +24,7 @@ function first(){
 first();
 
 function second(){
-    let input = getInput();
+    let input = getInput(3);
     let bits = input[0].length;
 
     let data = input;

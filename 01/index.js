@@ -1,7 +1,7 @@
 import { getInput } from '../helpers.js';
 
 function first(){
-    let input = getInput();
+    let input = getInput(1);
     let last = Number.MAX_VALUE, increases = 0;
     for (const iterator of input) {
         let num = Number.parseInt(iterator)
@@ -11,7 +11,7 @@ function first(){
     console.log(increases);
 }
 function second(){
-    let input = getInput();
+    let input = getInput(1);
     let last = Number.MAX_VALUE, increases = 0;
 
     for(let i = 0; i< input.length - 2; i++){

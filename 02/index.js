@@ -1,7 +1,7 @@
 import { getInput } from '../helpers.js';
 
 function first(){
-    let input = getInput();
+    let input = getInput(2);
     let x = 0, y = 0;
     let re = /([a-z]+) (\d+)/;
     for(let cmd of input){
@@ -22,7 +22,7 @@ function first(){
 first();
 
 function second(){
-    let input = getInput();
+    let input = getInput(2);
     let x = 0, y = 0, aim = 0;
     let re = /([a-z]+) (\d+)/;
     for(let cmd of input){

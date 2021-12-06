@@ -1,7 +1,7 @@
 import { getInput } from '../helpers.js';
 
 function first(days = 80){
-    let input = getInput();
+    let input = getInput(6);
     let fish = input[0].split(',').map(x=>parseInt(x));
     let day = 0;
 

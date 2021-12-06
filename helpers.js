@@ -1,9 +1,13 @@
 import { readFileSync } from 'fs';
 
-export function getInput(){
+export function getInput(day){
 
     let input = [];
-    readFileSync(`input.txt`, 'utf-8').split(/\r?\n/).forEach(function(line){
+    let path = `input.txt`;
+    if(day){
+        path = `${String(day).padStart(2, '0')}/input.txt`;
+    }
+    readFileSync(path, 'utf-8').split(/\r?\n/).forEach(function(line){
         input.push(line);
     });
     return input;
