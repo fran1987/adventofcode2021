@@ -1,10 +1,22 @@
 import { mkdirSync,writeFileSync,existsSync } from 'fs';
 import { exit } from 'process';
+import axios from 'axios';
+import dotenv from 'dotenv';
 
-let dayDirectory = process.argv.slice(2)[0].padStart(2, '0');
+dotenv.config();
+
+let day = process.argv.slice(2)[0];
+
+let dayDirectory = day.padStart(2, '0');
 
 if(existsSync(dayDirectory)) exit(1);
 
 mkdirSync(dayDirectory);
 writeFileSync(`${dayDirectory}/index.js`,'');
-writeFileSync(`${dayDirectory}/input.txt`, '');
+writeFileSync(`${dayDirectory}/testInput.txt`,'');
+
+axios.get(`https://adventofcode.com/2021/day/${day}/input`,{
+    "headers": { Cookie: `session=${process.env.session}` }
+}).then(({data}) => {
+    writeFileSync(`${dayDirectory}/input.txt`, data.trim());
+});

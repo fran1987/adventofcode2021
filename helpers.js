@@ -1,13 +1,16 @@
 import { readFileSync } from 'fs';
 
-export function getInput(day){
+export function getInput(day, test) {
 
     let input = [];
-    let path = `input.txt`;
-    if(day){
-        path = `${String(day).padStart(2, '0')}/input.txt`;
+    let directory = ''
+    let fileName = 'input.txt'
+    if(test) fileName = 'testInput.txt';
+    if (day) {
+        directory = `${String(day).padStart(2, '0')}/`;
     }
-    readFileSync(path, 'utf-8').split(/\r?\n/).forEach(function(line){
+    let path = `${directory}${fileName}`;
+    readFileSync(path, 'utf-8').split(/\r?\n/).forEach(function (line) {
         input.push(line);
     });
     return input;
