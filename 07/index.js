@@ -21,16 +21,16 @@ function second(){
     const med = median(numbers);
 
     let position1 = Math.ceil(avg);
-    let costs1 = numbers.reduce((a, b) => a + pascal(Math.abs(b - position1)), 0);
+    let costs1 = numbers.reduce((a, b) => a + gauss(Math.abs(b - position1)), 0);
 
     let position2 = Math.floor(avg);
-    let costs2 = numbers.reduce((a, b) => a + pascal(Math.abs(b - position2)), 0);
+    let costs2 = numbers.reduce((a, b) => a + gauss(Math.abs(b - position2)), 0);
     
     console.log(avg, med, costs1, position1, costs2, position2);    //ni ovo :D
 }
 second();
 
-function pascal(number){
+function gauss(number){
     return number * (number + 1) / 2;
 }
 
