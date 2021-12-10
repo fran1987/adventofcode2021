@@ -36,12 +36,8 @@ function gauss(number){
 
 
 function median(values){
-    if(values.length ===0) throw new Error("No inputs");
-  
-    values.sort(function(a,b){
-      return a-b;
-    });
-  
+    values.sort((a, b) => a - b);
+
     var half = Math.floor(values.length / 2);
     
     if (values.length % 2)
