@@ -14,5 +14,6 @@ export function getInput(day, test, rowSplitDelimiter, mapFunction) {
         if (rowSplitDelimiter != null && mapFunction != null) input.push(line.split(rowSplitDelimiter).map(mapFunction));
         else input.push(line);
     });
-    return input;
+    if(input.length == 1) return input[0];
+    else return input;
 }
